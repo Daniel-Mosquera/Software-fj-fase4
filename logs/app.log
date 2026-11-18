@@ -1,0 +1,73 @@
+2026-11-18 15:48:47,590 | INFO     | ===== INICIO SIMULACIÓN SOFTWARE FJ =====
+2026-11-18 15:48:47,590 | INFO     | --- Operación 1: Cliente válido ---
+2026-11-18 15:48:47,590 | INFO     | Operación 1 exitosa -> Cliente #1: Ana Torres | ana@correo.com | Tel 3101234567
+2026-11-18 15:48:47,590 | DEBUG    | Operación 1 finalizada
+2026-11-18 15:48:47,590 | INFO     | --- Operación 2: Cliente inválido (correo) ---
+2026-11-18 15:48:47,590 | ERROR    | Error controlado en operación 2: Correo inválido: 'luis-correo'
+2026-11-18 15:48:47,590 | DEBUG    | Operación 2 finalizada
+2026-11-18 15:48:47,590 | INFO     | --- Operación 3: Cliente inválido (teléfono con letras) ---
+2026-11-18 15:48:47,591 | ERROR    | Error controlado en operación 3: El teléfono debe ser numérico: '31O1234' | causa: ValueError("invalid literal for int() with base 10: '31O1234'")
+2026-11-18 15:48:47,591 | DEBUG    | Operación 3 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 4: Sala válida ---
+2026-11-18 15:48:47,591 | INFO     | Operación 4 exitosa -> Sala 'Sala Ejecutiva' (capacidad 25) - $50,000/h
+2026-11-18 15:48:47,591 | DEBUG    | Operación 4 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 5: Servicio inválido (tarifa negativa) ---
+2026-11-18 15:48:47,591 | ERROR    | Error controlado en operación 5: Tarifa por hora inválida: -100
+2026-11-18 15:48:47,591 | DEBUG    | Operación 5 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 6: Equipo válido ---
+2026-11-18 15:48:47,591 | INFO     | Operación 6 exitosa -> Equipo 'Portátil Pro' (Computo) - $15,000/h + depósito $30,000
+2026-11-18 15:48:47,591 | DEBUG    | Operación 6 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 7: Asesoría válida ---
+2026-11-18 15:48:47,591 | INFO     | Operación 7 exitosa -> Asesoría 'Asesoría Cloud' en Cloud (senior) - $80,000/h
+2026-11-18 15:48:47,591 | DEBUG    | Operación 7 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 8: Reserva exitosa (IVA 19% y descuento 10%) ---
+2026-11-18 15:48:47,591 | INFO     | Reserva #8 CONFIRMADA
+2026-11-18 15:48:47,591 | INFO     | Reserva #8 procesada. Total: $176,715.00
+2026-11-18 15:48:47,591 | DEBUG    | Fin de procesar() para reserva #8
+2026-11-18 15:48:47,591 | INFO     | Operación 8 exitosa -> Reserva #8 | Ana Torres | Sala Ejecutiva | 3h | CONFIRMADA | total $176,715.00
+2026-11-18 15:48:47,591 | DEBUG    | Operación 8 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 9: Reserva de equipo exitosa ---
+2026-11-18 15:48:47,591 | INFO     | Reserva #9 CONFIRMADA
+2026-11-18 15:48:47,591 | INFO     | Reserva #9 procesada. Total: $214,200.00
+2026-11-18 15:48:47,591 | DEBUG    | Fin de procesar() para reserva #9
+2026-11-18 15:48:47,591 | INFO     | Operación 9 exitosa -> Reserva #9 | Ana Torres | Portátil Pro | 10h | CONFIRMADA | total $214,200.00
+2026-11-18 15:48:47,591 | DEBUG    | Operación 9 finalizada
+2026-11-18 15:48:47,591 | INFO     | --- Operación 10: Reserva con servicio no disponible ---
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 10: El servicio 'Portátil Pro' no está disponible.
+2026-11-18 15:48:47,592 | DEBUG    | Operación 10 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 11: Reserva sin duración (parámetro faltante) ---
+2026-11-18 15:48:47,592 | ERROR    | Fallo al procesar reserva #11: Falta la duración (horas) de la reserva.
+2026-11-18 15:48:47,592 | DEBUG    | Fin de procesar() para reserva #11
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 11: No se pudo procesar la reserva #11 | causa: ParametroFaltanteError('Falta la duración (horas) de la reserva.')
+2026-11-18 15:48:47,592 | DEBUG    | Operación 11 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 12: Reserva con duración fuera de rango ---
+2026-11-18 15:48:47,592 | ERROR    | Fallo al procesar reserva #12: Duración 20h fuera de rango (1-8h).
+2026-11-18 15:48:47,592 | DEBUG    | Fin de procesar() para reserva #12
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 12: No se pudo procesar la reserva #12 | causa: ParametroInvalidoError('Duración 20h fuera de rango (1-8h).')
+2026-11-18 15:48:47,592 | DEBUG    | Operación 12 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 13: Reserva con cliente inválido (None) ---
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 13: La reserva requiere un Cliente válido.
+2026-11-18 15:48:47,592 | DEBUG    | Operación 13 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 14: Cálculo inconsistente (descuento 150%) ---
+2026-11-18 15:48:47,592 | ERROR    | Fallo al procesar reserva #14: Descuento fuera de rango (0-1): 1.5
+2026-11-18 15:48:47,592 | DEBUG    | Fin de procesar() para reserva #14
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 14: No se pudo procesar la reserva #14 | causa: CalculoInconsistenteError('Descuento fuera de rango (0-1): 1.5')
+2026-11-18 15:48:47,592 | DEBUG    | Operación 14 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 15: Cancelar la misma reserva dos veces ---
+2026-11-18 15:48:47,592 | INFO     | Reserva #8 CANCELADA
+2026-11-18 15:48:47,592 | ERROR    | Error controlado en operación 15: La reserva #8 ya estaba cancelada.
+2026-11-18 15:48:47,592 | DEBUG    | Operación 15 finalizada
+2026-11-18 15:48:47,592 | INFO     | --- Operación 16: Error inesperado (división por cero) ---
+2026-11-18 15:48:47,592 | ERROR    | Error INESPERADO en operación 16: division by zero
+Traceback (most recent call last):
+  File "C:\Users\ASUS\Documents\GitHub\Software-fj-fase4\main.py", line 22, in ejecutar
+    resultado = operacion()
+  File "C:\Users\ASUS\Documents\GitHub\Software-fj-fase4\main.py", line 92, in <lambda>
+    ejecutar(16, "Error inesperado (división por cero)", lambda: 1 / 0)
+                                                                 ~~^~~
+ZeroDivisionError: division by zero
+2026-11-18 15:48:47,598 | DEBUG    | Operación 16 finalizada
+2026-11-18 15:48:47,598 | INFO     | ===== RESUMEN FINAL =====
+2026-11-18 15:48:47,598 | INFO     | Reserva #8 | Ana Torres | Sala Ejecutiva | 3h | CANCELADA | total $176,715.00
+2026-11-18 15:48:47,598 | INFO     | Reserva #9 | Ana Torres | Portátil Pro | 10h | CONFIRMADA | total $214,200.00
+2026-11-18 15:48:47,598 | INFO     | ===== FIN: el sistema siguió estable ante todos los errores =====

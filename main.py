@@ -1,6 +1,6 @@
 """
 main.py
-Simulación de 15 operaciones (válidas e inválidas) de Software FJ.
+Simulación de 16 operaciones (válidas e inválidas) de Software FJ.
 El programa NUNCA se detiene ante un error: cada operación está protegida.
 """
 from cliente import Cliente
